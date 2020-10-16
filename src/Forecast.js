@@ -1,14 +1,35 @@
-import React from "react";
-import "./Forecast.css";
+import React, { useState } from "react";
 
-export default function Forecast() {
-  return (
-    <div className="Forecast">
-      <div className="container">
-        <div className="hourly">
-          <div className="row row-no-gutters"></div>
-        </div>
+import axios from "axios";
+import "./Forecast.css";
+import ForecastDisplay from "./ForecastDisplay";
+
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
+
+  function forecastResponse(response) {
+    setForecast(response.data);
+    setLoaded(true);
+  }
+
+  if (loaded && props.city === forecast.city.name) {
+    return (
+      <div className="row">
+        <ForecastDisplay info={forecast.list[0]} />
+        <ForecastDisplay info={forecast.list[1]} />
+        <ForecastDisplay info={forecast.list[2]} />
+        <ForecastDisplay info={forecast.list[3]} />
+        <ForecastDisplay info={forecast.list[4]} />
+        <ForecastDisplay info={forecast.list[5]} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = `43d48c14e180f75f558e0def6bf829b0`;
+    let units = `imperial`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(forecastResponse);
+
+    return null;
+  }
 }

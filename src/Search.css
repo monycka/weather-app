@@ -1,12 +1,4 @@
-.Search .current-location {
-  color: #b91372;
-}
-
-.Search .search {
-  color: #b91372;
-}
-
-.Search .search-form {
+.Search .search-bar {
   background-image: radial-gradient(
     circle 248px at center,
     #16d9e3 0%,
@@ -15,6 +7,10 @@
   );
   border-radius: 20px;
   border: 10px;
-  margin: 20px;
   padding: 10px;
+  width: 800px;
+  margin: 0 auto;
+  height: 60px;
+  margin-bottom: 10px;
+  align-items: center;
 }

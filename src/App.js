@@ -1,28 +1,26 @@
 import React from "react";
-import Search from "./Search";
 import Weather from "./Weather";
+import Search from "./Search";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
 import Container from "react-bootstrap/Container";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 
 export default function App() {
   return (
     <div className="App">
-      <Container className="Weather">
-        <Container className="Search">
-          <Search />
-        </Container>
-        <Container className="Middle">
-          <Weather />
-        </Container>
-        <Container className="Forecast">
-          <Forecast />
-        </Container>
+      
+      <div className="container">
+        <Container />
+        <h1 className="Header"> Weather App</h1>
+        <Search />
+        <Weather defaultCity="San Francisco" />
+        <Forecast />
         <Footer />
-      </Container>
+      </div>
     </div>
   );
 }

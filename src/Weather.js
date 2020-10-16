@@ -1,112 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
+
+import axios from "axios";
 import "./Weather.css";
+import WeatherData from "./WeatherData";
+import Forecast from "./Forecast";
 
-export default function Middle() {
-  let weatherData = {
-    city: "San Francisco",
-    country: "US",
-    date: "Thursday, September 24",
-    time: "15:57",
-    temperature: "71",
-    imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-    feels: "73",
-    high: "77",
-    low: "63",
-    description: "Cloudy",
-    humidity: "60",
-    wind: "17"
-  };
-  return (
-    <div className="Middle">
-      <div className="container">
-        <div className="middle">
-          <div className="row row-no-gutters">
-            <div className="col-md-6">
-              <span className="left-side">
-                <span className="location">
-                  <span className="current-city"></span> {weatherData.city},{" "}
-                  {weatherData.country} <span className="country"></span>
-                </span>
-                <br />
-                <span className="dateTime">
-                  <span className="current-date">{weatherData.date}</span>
-                  <br />
-                  <span>
-                    Last updated:{" "}
-                    <span className="current-time">{weatherData.time}</span>
-                  </span>
-                </span>
-                <br />
-                <span className="temperature" className="temperature">
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.description}
-                    className="current-icon"
-                  />{" "}
-                  <span className="current-temperature">
-                    {weatherData.temperature}
-                  </span>
-                  <span className="units">
-                    <a href="/" className="active" className="fahrenheit-link">
-                      °F
-                    </a>
-                    <span className="bar">|</span>
-                    <a href="/" className="celsius-link">
-                      °C
-                    </a>
-                  </span>
-                </span>
-              </span>
-            </div>
-            <div className="col-md-3">
-              <div className="right-side">
-                <span className="daily">
-                  <div className="daily-temperatures">
-                    <span>Feels like: </span>
-                    <span className="feels-like">{weatherData.feels}</span>
-                    <span>°F</span>
-                    <br />
-                    <br />
-                    <span>Daily high: </span>
-                    <span className="daily-high">{weatherData.high}</span>
-                    <span>°F</span>
-                    <br />
-                    <br />
-                    <span>Daily low: </span>
-                    <span className="daily-low">{weatherData.low}</span>
-                    <span>°F</span>
-                    <br />
-                    <br />
-                  </div>
-                </span>
+export default function Weather(props) {
+  const [weatherInfo, setWeatherInfo] = useState({ loaded: false });
+  const [city, setCity] = useState(props.defaultCity);
+
+  function handleResponse(response) {
+    setWeatherInfo({
+      loaded: true,
+      cityName: response.data.name,
+      date: new Date(response.data.dt * 1000),
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      image: response.data.weather[0].icon,
+    });
+  }
+
+  function handleSearch() {
+    const  apiKey = `43d48c14e180f75f558e0def6bf829b0`;
+    const  units = `imperial`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    handleSearch();
+  }
+
+  function getCity(event) {
+    setCity(event.target.value);
+  }
+
+  if (weatherInfo.loaded) {
+    return (
+      <div className="Weather">
+        <WeatherData data={weatherInfo} />
+
+        <form className="Search" onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-6">
+              <div className="form-group">
+                <input
+                  type="search"
+                  className="form-control"
+                  placeholder="Enter your city"
+                  autoComplete="off"
+                  autoFocus="on"
+                  onChange={getCity}
+                />
               </div>
             </div>
-
-            <div className="col-md-3">
-              <div className="right-side">
-                <span className="daily">
-                  <div className="daily-conditions">
-                    <span>Today: </span>
-                    <span className="weather-description">
-                      {weatherData.description}
-                    </span>
-                    <br />
-                    <br />
-                    <span>Humidity: </span>
-                    <span className="humidity">{weatherData.humidity}</span>
-                    <span>%</span>
-                    <br />
-                    <br />
-                    <span>Wind speed: </span>
-                    <span className="wind-speed">{weatherData.wind}</span>
-                    <span>mph</span>
-                  </div>
-                </span>
-              </div>
+            <div className="col-3">
+              <button type="submit" className="btn btn-light">
+                Search
+              </button>
+            </div>
+            <div className="col-3">
+              <button
+                type="button"
+                className="btn btn-light"
+                id="current-location"
+              >
+                <span role="img" aria-label="Location">
+                  <i className="fas fa-map-marker-alt"></i>
+                </span>{" "}
+                Location
+              </button>
             </div>
           </div>
-        </div>
+        </form>
+        <Forecast city={weatherInfo.cityName} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    handleSearch();
+    return "Loading...";
+  }
 }

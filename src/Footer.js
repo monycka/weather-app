@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="Footer">
-      <a href="https://github.com/monycka/vanilla-weather-app">
+      <a href="https://github.com/monycka/weather-app">
         Open-source code
       </a>{" "}
       by Monica Colorado
