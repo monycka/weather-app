@@ -1,0 +1,51 @@
+.Middle .active {
+  color: #3a0ca3;
+  cursor: default;
+}
+
+.Middle .active:hover {
+  text-decoration: none;
+}
+
+.Middle .bar,
+.celsius-link,
+.fahrenheit-link {
+  font-size: 28px;
+  position: relative;
+  top: -15px;
+}
+
+.Middle .current-icon {
+  height: 75px;
+  width: 75px;
+}
+
+.Middle .current-location {
+  color: #b91372;
+}
+
+.Middle .daily {
+  color: #2a9d8f;
+}
+
+.Middle .dateTime {
+  color: #3f86bc;
+}
+
+.Middle .hourly,
+.midddle {
+  border: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.Middle .location {
+  color: #b91372;
+  font-size: 32px;
+}
+
+.Middle .temperature {
+  color: #3a0ca3;
+  font-size: 52px;
+  line-height: 1;
+}

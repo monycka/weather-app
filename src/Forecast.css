@@ -1,0 +1,18 @@
+.Forecast .hourly {
+  color: #fff;
+  background-image: radial-gradient(
+    circle 248px at center,
+    #16d9e3 0%,
+    #30c7ec 47%,
+    #46aef7 100%
+  );
+  border-radius: 20px;
+}
+
+.Forecast #forecast-hours {
+  color: #3a0ca3;
+}
+
+.Forecast #temp-max {
+  color: #0e0004;
+}
