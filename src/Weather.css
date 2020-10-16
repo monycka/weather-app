@@ -1,12 +1,25 @@
-.Weather .current-location {
+.active {
+  color: #3a0ca3;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
+.current-location {
   color: #b91372;
 }
 
-.Weather .search {
+.dateTime {
+  color: #3f86bc;
+}
+
+.search {
   color: #b91372;
 }
 
-.Weather .search-bar {
+.search-bar {
   background-image: radial-gradient(
     circle 248px at center,
     #16d9e3 0%,

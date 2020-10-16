@@ -41,7 +41,9 @@ export default function DateTime(props) {
   }
   return (
     <div>
-      `Last updated: ${hours}:${minutes} ${day}, ${month} ${date}, ${year}`
+      Last updated: {hours}:{minutes}
+      <br />
+      {day}, {month} {date}, {year}
     </div>
   );
   }

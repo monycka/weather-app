@@ -1,6 +1,8 @@
 import React from "react";
 import WeatherIcons from "./WeatherIcons";
 
+import "./Forecast.css";
+
 export default function ForecastDisplay(props) {
   function hours() {
     let date = new Date(props.data.dt * 1000);
@@ -17,9 +19,11 @@ export default function ForecastDisplay(props) {
   }
 
   return (
-    <div className="WeatherFororecast">
-      {hours()}
+    <div className="weatherForecast">
+      <span id="forecast-hours">{hours()}</span>
+      <br />
       <WeatherIcons code={props.data.weather[0].icon} />
+      <br />
       {temperature()}
     </div>
   );

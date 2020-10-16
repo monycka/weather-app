@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-
 import axios from "axios";
-import "./Forecast.css";
 import ForecastDisplay from "./ForecastDisplay";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import "./Forecast.css";
 
 export default function Forecast(props) {
   const [loaded, setLoaded] = useState(false);
@@ -15,14 +17,16 @@ export default function Forecast(props) {
 
   if (loaded && props.city === forecast.city.name) {
     return (
-      <div className="row">
-        <ForecastDisplay data={forecast.list[0]} />
-        <ForecastDisplay data={forecast.list[1]} />
-        <ForecastDisplay data={forecast.list[2]} />
-        <ForecastDisplay data={forecast.list[3]} />
-        <ForecastDisplay data={forecast.list[4]} />
-        <ForecastDisplay data={forecast.list[5]} />
-      </div>
+      <Container className="forecast">
+        <Row>
+          <Col md={2}><ForecastDisplay data={forecast.list[0]} /></Col>
+          <Col md={2}><ForecastDisplay data={forecast.list[1]} /></Col>
+          <Col md={2}><ForecastDisplay data={forecast.list[2]} /></Col>
+          <Col md={2}><ForecastDisplay data={forecast.list[3]} /></Col>
+          <Col md={2}><ForecastDisplay data={forecast.list[4]} /></Col>
+          <Col md={2}><ForecastDisplay data={forecast.list[5]} /></Col>
+        </Row>
+      </Container>
     );
   } else {
     let apiKey = `43d48c14e180f75f558e0def6bf829b0`;
