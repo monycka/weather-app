@@ -1,19 +1,28 @@
-import React from 'react';
+import React from "react";
+import Search from "./Search";
 import Weather from "./Weather";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
 
-import './App.css';
+import Container from "react-bootstrap/Container";
 
-function App() {
+import "./App.css";
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          Hello testing
-        </h1>
-        <Weather />
-      </header>
+      <Container className="Weather">
+        <Container className="Search">
+          <Search />
+        </Container>
+        <Container className="Middle">
+          <Weather />
+        </Container>
+        <Container className="Forecast">
+          <Forecast />
+        </Container>
+        <Footer />
+      </Container>
     </div>
   );
 }
-
-export default App;

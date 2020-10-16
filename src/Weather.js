@@ -1,5 +1,5 @@
 import React from "react";
-import "./Middle.css";
+import "./Weather.css";
 
 export default function Middle() {
   let weatherData = {
