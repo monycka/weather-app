@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-import Search from "./Search";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
@@ -16,7 +15,6 @@ export default function App() {
       <div className="container">
         <Container />
         <h1 className="Header"> Weather App</h1>
-        <Search />
         <Weather defaultCity="San Francisco" />
         <Forecast />
         <Footer />

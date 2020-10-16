@@ -7,7 +7,7 @@ export default function Footer() {
       <a href="https://github.com/monycka/weather-app">
         Open-source code
       </a>{" "}
-      by Monica Colorado
+      by <a href="https://www.linkedin.com/in/monyckadc/">Monica Colorado</a>
     </div>
   );
 }

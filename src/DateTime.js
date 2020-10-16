@@ -1,7 +1,25 @@
 import React from "react";
 
-
 export default function DateTime(props) {
+  let year = props.date.getFullYear();
+  let date = props.date.getDate();
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[props.date.getMonth()];
+
   let days = [
     "Sunday",
     "Monday",
@@ -11,21 +29,19 @@ export default function DateTime(props) {
     "Friday",
     "Saturday",
   ];
-  let day = days[props.dayTime.getDay()];
-  let hours = props.dayTime.getHours();
+  let day = days[props.date.getDay()];
+  let hours = props.date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = props.dayTime.getMinutes();
+
+  let minutes = props.date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   return (
-    <ul className="TimeDate">
-      <li>
-        {day} {hours}:{minutes}
-      </li>
-    </ul>
+    <div>
+      `Last updated: ${hours}:${minutes} ${day}, ${month} ${date}, ${year}`
+    </div>
   );
-}
+  }

@@ -1,25 +1,26 @@
 import React from "react";
-
 import WeatherIcons from "./WeatherIcons";
 
 export default function ForecastDisplay(props) {
-  function displayHours() {
-    let date = new Date(props.info.dt * 1000);
-    let hour = date.getHours();
-    if (hour < 10) {
-      hour = `0${hour}`;
+  function hours() {
+    let date = new Date(props.data.dt * 1000);
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
     }
-    return `${hour}:00`;
+    return `${hours}:00`;
+  }
+
+  function temperature() {
+    let temperature = Math.round(props.data.main.temp_max);
+    return `${temperature}°F`;
   }
 
   return (
-    <div className="col-2 ForecastDisplay">
-      <h4>{displayHours()}</h4>
-      <WeatherIcons iconCode={props.info.weather[0].icon} />
-      <div>
-        <strong>{Math.round(props.info.main.temp_max)}° </strong>
-        <span>{Math.round(props.info.main.temp_min)}°</span>
-      </div>
+    <div className="WeatherFororecast">
+      {hours()}
+      <WeatherIcons code={props.data.weather[0].icon} />
+      {temperature()}
     </div>
   );
 }
