@@ -1,3 +1,13 @@
+.bar {
+  color: #3a0ca3;
+}
+
+canvas {
+  margin: 0 auto;
+  display: block;
+  padding: 6px 0px;
+}
+
 .current-city, #current-location, #search {
   color: #b91372;
 }
@@ -47,4 +57,18 @@
 .weatherInfo {
   color: #2a9d8f;
   margin-bottom: 20px;
+}
+
+.weather-temperature a {
+  color: #2a9d8f;
+  cursor: default;
+}
+
+.weather-temperature .active {
+  color: #3a0ca3;
+  cursor: default;
+}
+
+.weather-temperature a:hover {
+  text-decoration: none;
 }

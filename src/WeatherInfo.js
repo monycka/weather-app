@@ -20,7 +20,7 @@ export default function WeatherInfo(props) {
               <DateTime date={props.data.date} />
             </div>
             <div className="icons">
-              <WeatherIcons code={props.data.icon} />
+            <WeatherIcons code={props.data.icon} />
             </div>
             <div className="current-temperature">
               <Conversion fahrenheit={props.data.temperature} />
@@ -29,16 +29,24 @@ export default function WeatherInfo(props) {
           <Col md={3}>
             Feels like: {props.data.feels}°F
             <br />
+            <br />
             Daily high: {props.data.tempmax}°F
             <br />
+            <br />
             Daily low: {props.data.tempmin}°F
+            <br />
+            <br />
           </Col>
           <Col md={3}>
             Today: {props.data.description}
             <br />
+            <br />
             Humidity: {props.data.humidity}%
             <br />
+            <br />
             Wind speed: {props.data.wind} mph
+            <br />
+            <br />
           </Col>
         </Row>
       </Container>
