@@ -13,21 +13,21 @@ export default function WeatherInfo(props) {
       <Container>
         <Row>
           <Col md={6}>
-            <h1 className="current-location">
-              {props.data.city}
-            </h1>
-            <DateTime date={props.data.date} />
-            <div>
-              <WeatherIcons code={props.data.icon} />
-              <Conversion fahrenheit={props.data.temperature} />
+  <h1 className="current-location">{props.data.city}, {props.data.country}</h1>
+            <div className="date-time">
+              <DateTime date={props.data.date} />
+              <div>
+                <WeatherIcons code={props.data.icon} />
+                <Conversion fahrenheit={props.data.temperature} />
+              </div>
             </div>
           </Col>
           <Col md={3}>
-            Feels like:
+            Feels like: {props.data.feels}°F
             <br />
-            Daily high: {props.data.tempmax}°
+            Daily high: {props.data.tempmax}°F
             <br />
-            Daily low: {props.data.tempmin}°
+            Daily low: {props.data.tempmin}°F
           </Col>
           <Col md={3}>
             Today: {props.data.description}

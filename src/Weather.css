@@ -11,7 +11,7 @@
   color: #b91372;
 }
 
-.dateTime {
+.date-time {
   color: #3f86bc;
 }
 
@@ -27,11 +27,16 @@
     #46aef7 100%
   );
   border-radius: 20px;
-  border: 10px;
-  padding: 10px;
+  border: 30px;
+  padding: 20px;
   width: 800px;
   margin: 0 auto;
-  height: 60px;
-  margin-bottom: 10px;
+  height: 90px;
+  margin-bottom: 20px;
   align-items: center;
+}
+
+.weatherInfo {
+  color: #2a9d8f;
+  margin-bottom: 20px;
 }
