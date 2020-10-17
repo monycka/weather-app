@@ -1,3 +1,17 @@
+.current-city, #current-location, #search {
+  color: #b91372;
+}
+
+.current-info {
+  border-radius: 20px;
+  border: 30px;
+  padding: 20px;
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
 .date-time {
   color: #3f86bc;
 }
@@ -33,8 +47,4 @@
 .weatherInfo {
   color: #2a9d8f;
   margin-bottom: 20px;
-}
-
-#current-location, #search {
-  color: #b91372;
 }

@@ -10,10 +10,10 @@ import "./Weather.css";
 export default function WeatherInfo(props) {
   return (
     <div className="weatherInfo">
-      <Container>
+      <Container className="current-info">
         <Row>
           <Col md={6}>
-            <h1 className="current-location">
+            <h1 className="current-city">
               {props.data.city}, {props.data.country}
             </h1>
             <div className="date-time">
