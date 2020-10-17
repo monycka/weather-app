@@ -7,59 +7,14 @@ body {
   text-align: center;
 }
 
+h1 {
+  color: #008080;
+}
+
+
 #container {
   border-radius: 20px;
   margin: 0 auto;
   display: block;
   width: 950px;
-}
-
-.form-control {
-  font-size: 20px;
-}
-
-.hourly {
-  color: #fff;
-}
-
-.hourly, .middle, .search-form {
-  border: 10px;
-  margin: 20px;
-  padding: 10px;
-}
-
-.hourly, .search-form {
-  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-  border-radius: 20px;
-}
-
-.temperature {
-  color: #3a0ca3;
-  font-size: 52px;
-  line-height: 1;
-}
-
-#bar, #celsius-link, #fahrenheit-link {
-  font-size: 28px;
-  position: relative;
-  top: -15px;
-}
-
-#current-icon {
-  height: 75px;
-  width: 75px;
-}
-
-#current-location, #search, #user-location {
-  color: #b91372;
-}
-
-
-#location {
-  color: #b91372;
-  font-size: 32px;
-}
-
-#temp-max {
-  color: #0e0004;
 }

@@ -13,13 +13,17 @@ export default function WeatherInfo(props) {
       <Container>
         <Row>
           <Col md={6}>
-  <h1 className="current-location">{props.data.city}, {props.data.country}</h1>
+            <h1 className="current-location">
+              {props.data.city}, {props.data.country}
+            </h1>
             <div className="date-time">
               <DateTime date={props.data.date} />
-              <div>
-                <WeatherIcons code={props.data.icon} />
-                <Conversion fahrenheit={props.data.temperature} />
-              </div>
+            </div>
+            <div className="icons">
+              <WeatherIcons code={props.data.icon} />
+            </div>
+            <div className="current-temperature">
+              <Conversion fahrenheit={props.data.temperature} />
             </div>
           </Col>
           <Col md={3}>

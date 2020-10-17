@@ -1,22 +1,5 @@
-.active {
-  color: #3a0ca3;
-  cursor: default;
-}
-
-.active:hover {
-  text-decoration: none;
-}
-
-.current-location {
-  color: #b91372;
-}
-
 .date-time {
   color: #3f86bc;
-}
-
-.search {
-  color: #b91372;
 }
 
 .search-bar {
@@ -31,12 +14,27 @@
   padding: 20px;
   width: 800px;
   margin: 0 auto;
-  height: 90px;
   margin-bottom: 20px;
   align-items: center;
+}
+
+.temperature {
+  color: #3a0ca3;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.units {
+  font-size: 28px;
+  position: relative;
+  top: -15px;
 }
 
 .weatherInfo {
   color: #2a9d8f;
   margin-bottom: 20px;
+}
+
+#current-location, #search {
+  color: #b91372;
 }
