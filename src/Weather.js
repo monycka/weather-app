@@ -62,44 +62,55 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Search">
-        <Container className="search-bar" onSubmit={handleSubmit}>
+        <form className="search-bar" onSubmit={handleSubmit}>
+          <Container>
+            <Row>
+              <Col md={6}>
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  className="form-control"
+                  id="searching"
+                  autoFocus="on"
+                  autoComplete="off"
+                  onChange={handleCityChange}
+                />
+              </Col>
+            </Row>
+          </Container>
           <Row>
-            <Col md={6}>
-              <input
-                type="search"
-                placeholder="Type a city..."
-                className="form-control"
-                id="searching"
-                autoFocus="on"
-                autoComplete="off"
-                onChange={handleCityChange}
-              />
-            </Col>
-            <Col md={3}>
-              <Button
-                type="submit"
-                value="Search"
-                className="form-control"
-                id="search"
-                variant="light"
-              >
-                SEARCH
-              </Button>
-            </Col>
-            <Col md={3}>
-              <Button
-                variant="light"
-                type="submit"
-                value="Current Location"
-                className="form-control"
-                id="current-location"
-                onClick={getLocation}
-              >
-                Current Location
-              </Button>
-            </Col>
+            <Container>
+              <Col md={3}>
+                <Button
+                  type="submit"
+                  value="Search"
+                  className="form-control"
+                  id="search"
+                  variant="light"
+                >
+                  SEARCH
+                </Button>
+              </Col>
+            </Container>
           </Row>
-        </Container>
+
+          <Container>
+            <Row>
+              <Col md={3}>
+                <Button
+                  variant="light"
+                  type="submit"
+                  value="Current Location"
+                  className="form-control"
+                  id="current-location"
+                  onClick={getLocation}
+                >
+                  Current Location
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </form>
         <div>
           <WeatherInfo data={weatherData} />
           <Forecast city={weatherData.city} />
