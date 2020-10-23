@@ -11,7 +11,6 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      
       <div className="container">
         <Container />
         <h1 className="Header"> Weather App</h1>

@@ -11,10 +11,9 @@ h1 {
   color: #008080;
 }
 
-
-.app {
+.container {
   border-radius: 20px;
   margin: 0 auto;
   display: block;
-  width: 900px;
+  width: 800px;
 }
