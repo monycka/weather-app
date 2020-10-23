@@ -8,16 +8,23 @@ canvas {
   padding: 6px 0px;
 }
 
+.clearfix {
+  display: block;
+  margin: 10px;
+}
+
 .current-city, #searching, #submit {
   color: #b91372;
 }
 
+.current-icon {
+  float: left;
+}
 .current-info {
   border-radius: 20px;
   border: 30px;
   padding: 20px;
   margin: 0 auto;
-  margin-bottom: 20px;
   align-items: center;
 }
 
