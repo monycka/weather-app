@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import ForecastDisplay from "./ForecastDisplay";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./Forecast.css";
 
