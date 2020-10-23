@@ -1,16 +1,12 @@
-.bar {
-  color: #3a0ca3;
-}
-
 canvas {
   margin: 0 auto;
   display: block;
-  padding: 6px 0px;
 }
 
 .clearfix {
   display: block;
   margin: 10px;
+  text-align: center;
 }
 
 .current-city, #searching, #submit {
@@ -20,12 +16,19 @@ canvas {
 .current-icon {
   float: left;
 }
+
 .current-info {
   border-radius: 20px;
   border: 30px;
   padding: 20px;
   margin: 0 auto;
   align-items: center;
+}
+
+.current-temperature {
+  color: #3a0ca3;
+  font-size: 52px;
+  line-height: 1;
 }
 
 .date-time {
@@ -45,12 +48,6 @@ canvas {
   margin: 0 auto;
   margin-bottom: 20px;
   align-items: center;
-}
-
-.temperature {
-  color: #3a0ca3;
-  font-size: 52px;
-  line-height: 1;
 }
 
 .units {

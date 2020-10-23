@@ -24,7 +24,8 @@ export default function ForecastDisplay(props) {
       <br />
       <WeatherIcons code={props.data.weather[0].icon} />
       <br />
-      {temperature()}
+      <span className="forecast-temperature">{temperature()}</span>
+      
     </div>
   );
 }

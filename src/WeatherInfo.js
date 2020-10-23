@@ -18,9 +18,9 @@ export default function WeatherInfo(props) {
             <DateTime date={props.data.date} />
           </div>
           <div className="clearfix">
-            <span className="current-icon">
+            <div className="current-icon">
               <WeatherIcons code={props.data.icon} />
-            </span>
+            </div>
             <div className="current-temperature">
               <Conversion fahrenheit={props.data.temperature} />
             </div>

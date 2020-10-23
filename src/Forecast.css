@@ -6,13 +6,12 @@
     #46aef7 100%
   );
   border-radius: 20px;
-  border: 20px;
   padding: 10px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   align-items: center;
 }
 
-.forecast-hours {
-  color: #3a0ca3;
+.forecast-hours, .forecast-temperature {
+  color: #344966;
 }
