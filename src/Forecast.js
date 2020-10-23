@@ -17,7 +17,7 @@ export default function Forecast(props) {
 
   if (loaded && props.city === forecast.city.name) {
     return (
-      <Container className="forecast">
+      <div className="forecast">
         <Row>
           <Col md={2}><ForecastDisplay data={forecast.list[0]} /></Col>
           <Col md={2}><ForecastDisplay data={forecast.list[1]} /></Col>
@@ -26,7 +26,7 @@ export default function Forecast(props) {
           <Col md={2}><ForecastDisplay data={forecast.list[4]} /></Col>
           <Col md={2}><ForecastDisplay data={forecast.list[5]} /></Col>
         </Row>
-      </Container>
+      </div>
     );
   } else {
     let apiKey = `43d48c14e180f75f558e0def6bf829b0`;

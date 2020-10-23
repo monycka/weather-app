@@ -12,9 +12,9 @@ h1 {
 }
 
 
-#container {
+.app {
   border-radius: 20px;
   margin: 0 auto;
   display: block;
-  width: 950px;
+  width: 900px;
 }

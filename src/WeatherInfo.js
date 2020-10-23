@@ -3,14 +3,12 @@ import DateTime from "./DateTime.js";
 import WeatherIcons from "./WeatherIcons.js";
 import Conversion from "./Conversion.js";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./Weather.css";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="weatherInfo">
-      <Container className="current-info">
+    <div className="current-info">
         <Row>
           <Col md={6}>
             <h1 className="current-city">
@@ -26,7 +24,7 @@ export default function WeatherInfo(props) {
               <Conversion fahrenheit={props.data.temperature} />
             </div>
           </Col>
-          <Col md={3}>
+          <Col md={3} className="weather-info">
             Feels like: {props.data.feels}°F
             <br />
             <br />
@@ -37,7 +35,7 @@ export default function WeatherInfo(props) {
             <br />
             <br />
           </Col>
-          <Col md={3}>
+          <Col md={3} className="weather-info">
             Today: {props.data.description}
             <br />
             <br />
@@ -49,7 +47,6 @@ export default function WeatherInfo(props) {
             <br />
           </Col>
         </Row>
-      </Container>
     </div>
   );
 }

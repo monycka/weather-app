@@ -16,7 +16,6 @@ canvas {
   border-radius: 20px;
   border: 30px;
   padding: 20px;
-  width: 800px;
   margin: 0 auto;
   margin-bottom: 20px;
   align-items: center;
@@ -39,9 +38,6 @@ canvas {
   margin: 0 auto;
   margin-bottom: 20px;
   align-items: center;
-  flex: 1;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .temperature {
@@ -56,7 +52,7 @@ canvas {
   top: -15px;
 }
 
-.weatherInfo {
+.weather-info {
   color: #2a9d8f;
   margin-bottom: 20px;
 }
