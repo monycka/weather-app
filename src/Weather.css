@@ -9,8 +9,9 @@ canvas {
   text-align: center;
 }
 
-.current-city, #searching, #submit {
+.current-city{
   color: #b91372;
+  font-size: 38px;
 }
 
 .current-icon {
@@ -35,6 +36,7 @@ canvas {
 
 .date-time {
   color: #3f86bc;
+  font-size: 22px;
 }
 
 .search-bar {
@@ -60,6 +62,7 @@ canvas {
 
 .weather-info {
   color: #2a9d8f;
+  font-size: 18px;
 }
 
 .weather-temperature a {
@@ -74,4 +77,8 @@ canvas {
 
 .weather-temperature a:hover {
   text-decoration: none;
+}
+
+#searching, #submit {
+  color: #b91372;
 }
