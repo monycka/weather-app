@@ -19,7 +19,7 @@ export default function WeatherInfo(props) {
           </div>
           <div className="clearfix">
             <div className="current-icon">
-              <WeatherIcons code={props.data.icon} />
+              <WeatherIcons code={props.data.icon} alt={props.data.description}/>
             </div>
             <div className="current-temperature">
               <Conversion fahrenheit={props.data.temperature} />
