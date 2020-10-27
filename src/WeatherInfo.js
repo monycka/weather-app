@@ -1,7 +1,7 @@
 import React from "react";
 import DateTime from "./DateTime.js";
 import WeatherIcons from "./WeatherIcons.js";
-import Conversion from "./Conversion.js";
+import WeatherConversion from "./WeatherConversion.js";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./Weather.css";
@@ -22,7 +22,7 @@ export default function WeatherInfo(props) {
               <WeatherIcons code={props.data.icon} alt={props.data.description}/>
             </div>
             <div className="current-temperature">
-              <Conversion fahrenheit={props.data.temperature} />
+              <WeatherConversion fahrenheit={props.data.temperature} />
             </div>
           </div>
         </Col>
