@@ -19,7 +19,7 @@ export default function ForecastDisplay(props) {
   }
 
   return (
-    <div className="weatherForecast">
+    <div className="WeatherForecast">
       <span className="forecast-hours">{hours()}</span>
       <br />
       <WeatherIcons code={props.data.weather[0].icon} />
